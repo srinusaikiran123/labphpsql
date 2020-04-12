@@ -1,6 +1,6 @@
 <?php
 
-class User extends Controller {
+class AuthorInfo extends Controller {
 
     function __construct() {
         parent::__construct();
@@ -16,7 +16,7 @@ class User extends Controller {
         }
         $this->view("template/footer");
     }
-        fucntion Login(){
+        function Login(){
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $post_csrf = htmlentities($_POST["csrf"]);
                 $cookie_csrf = $_COOKIE["csrf"];
@@ -29,7 +29,7 @@ class User extends Controller {
                     $checked = $this->AuthorsInfoModel->checkedUser($clear_username,$clear_password);
                  if($checked){
 
-                    header("location: /user/");
+                    header("location: /authorinfo/");
                  }
                  else{
 
@@ -47,8 +47,9 @@ class User extends Controller {
                         $_SESSION["csrf"] = $csrf;
                         setcookie("csrf",$csrf);
                         echo("sess cookie::" . $_SESSION["csrf"]);
-                        $this->view("test/login",array("csrf" => $csrf));
-                     }else {
+                        $this->view("main/login",array("csrf" => $csrf));
+                     }
+                     else{
                          http_response_code(405);
 
                      }
@@ -58,7 +59,7 @@ class User extends Controller {
                      session_unset();
                      session_destroy();
                      $_SESSION = Array();
-                     header("location:/user/");
+                     header("location:/authorinfo/");
 
                  }
                     }

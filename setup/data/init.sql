@@ -11,5 +11,5 @@ CREATE TABLE authors (
 
 );
 
-INSERT INTO authors (email,hash_password, first_name, last_name, biography) VALUES ("Srinusaikiran@gmail.com","  ","Saikiran","puli","engineer")
+INSERT INTO authors (email,hash_password, first_name, last_name, biography) VALUES ("Srinusaikiran@gmail.com","     ","Saikiran","puli","engineer")
 )

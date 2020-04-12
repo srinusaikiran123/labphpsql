@@ -1,5 +1,6 @@
 <?php
 
+ echo(password_hash("567",PASSWORD_DEFAULT));
     require(__DIR__ . '/private/core/app.php');
 
     $app = new App();
