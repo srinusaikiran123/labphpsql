@@ -2,7 +2,7 @@
 
 class Installdatabase{
 
-    private $configuration = [];
+    private $config= [];
 
     public $db;
 
@@ -15,7 +15,7 @@ class Installdatabase{
                  echo("if");
                  $dsn = $this->config["database"] ["driver"] . ":" .
                  "host=" . $this->config["database"] ["dbhost"] .
-                 "dbname=" . $this->config["database"] ["dbname"];
+                 ";dbname=" . $this->config["database"] ["dbname"];
                  echo("before execute222" . $dsn) ;
                  $this->db = new PDO(
                      $dsn
@@ -24,7 +24,6 @@ class Installdatabase{
                  );
                  echo("before execute111");
                  $sql = file_get_contents("setup/data/init.sql");
-                 echo("before execute");
                  $this->db->exec($sql);
 
                  echo "Database setup succes. \n";
@@ -38,5 +37,6 @@ class Installdatabase{
         }
               echo("Hello");
               $installer = new Installdatabase();
+              $installer->configuration();
               $installer->install();
 ?>

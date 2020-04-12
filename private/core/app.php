@@ -16,13 +16,13 @@
         function configure() {
             require(ROOT . "/private/core/config/database.php");
 
-            if (isset($this->config["databse"])) {
+            if (isset($this->config["database"])) {
                 try {
                     $this->db = new PDO($this->config["database"]["driver"] .
                         ":host=" . $this->config["database"]["dbhost"] .
                         ";dbname=" . $this->config["database"]["dbname"]
                         , $this->config["database"]["username"]
-                        , $this->config["database"]["passord"]);
+                        , $this->config["database"]["password"]);
                 } catch(PDOException $ex) {
                     echo($ex->getMessage);
                 }
@@ -54,6 +54,7 @@
         }
 
         function start () {
+            session_start();
             $route = explode('/', URI);
 
             $route[1] = strtolower($route[1]);
