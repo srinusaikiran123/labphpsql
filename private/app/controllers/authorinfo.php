@@ -26,7 +26,7 @@ class AuthorInfo extends Controller {
                     $this->model("AuthorsInfoModel");
                     $clear_username = htmlentities($_POST["username"]);
                     $clear_password = htmlentities($_POST["password"]);
-                    $checked = $this->AuthorsInfoModel->checkedUser($clear_username,$clear_password);
+                    $checked = $this->AuthorInfoModel->checkedUser($clear_username,$clear_password);
                  if($checked){
 
                     header("location: /authorinfo/");

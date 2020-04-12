@@ -23,7 +23,7 @@ class AuthorInfoModel extends Model {
                 $_SESSION["last_name"] = $row[2];
                 $_SESSION["username"] = $clear_username;
 
-                $update_sql = "UPDATE `authors` set `last_login_date` = CURRENT _TIMESTAMP() where email = ?";
+                $update_sql = "UPDATE `authors` set `last_login_date` = CURRENT_TIMESTAMP() where email = ?";
                 $update_statement = $this->db->prepare($update_sql);
                 $update_statement->execute(Array($clear_username));
 

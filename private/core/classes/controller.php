@@ -70,7 +70,8 @@ abstract class Controller {
         $class = $class[count($class)-1];
 
         $path = strtolower($path);
-
+         
+        
         require(ROOT . "/private/app/models/$path.php");
 
         $this->$class = new $class;
