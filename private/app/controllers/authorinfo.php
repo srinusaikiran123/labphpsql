@@ -41,7 +41,7 @@ class AuthorInfo extends Controller {
 
                  }
                 }
-                     else if($_SERVER)["REQUEST_METHOD"] == "GET") {
+                     else if($_SERVER["REQUEST_METHOD"] == "GET") {
 
                         $csrf = random_int(10000,100000000);
                         $_SESSION["csrf"] = $csrf;
