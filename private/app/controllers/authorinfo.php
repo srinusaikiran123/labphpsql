@@ -45,17 +45,24 @@ class User extends Controller {
                         $_SESSION["csrf"] = $csrf;
                         setcookie("csrf",$csrf);
                         echo("sess cookie::" . $_SESSION["csrf"]);
-                        $this->view("test/loginml90[p]\[]")
+                        $this->view("test/login",array("csrf" => $csrf => $csrf));
+                     }else{
+                         http_response_code(405);
+
                      }
+                     }
+                 function Logout(){
+                     session_unset();
+                     session_destroy();
+                     $_SESSION = Array();
+                     header("location:/user/");
+
                  }
+                    }
+
+
+                
                  }
                 
                 }
-
-
-            }
-        }
-        }
-        }
-    }
-}
+?>
