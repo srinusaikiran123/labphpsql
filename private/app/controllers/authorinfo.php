@@ -10,9 +10,9 @@ class AuthorInfo extends Controller {
 
         $is_checked = isset($_SESSION["username"]);
         if($is_checked) {
-            $this->view("test/checked");
+            $this->view("main/tested");
         }else {
-            $this->view("test/unchecked");
+            $this->view("main/not tested");
         }
         $this->view("template/footer");
     }
@@ -26,7 +26,7 @@ class AuthorInfo extends Controller {
                     $this->model("AuthorsInfoModel");
                     $clear_username = htmlentities($_POST["username"]);
                     $clear_password = htmlentities($_POST["password"]);
-                    $checked = $this->AuthorInfoModel->checkedUser($clear_username,$clear_password);
+                    $checked = $this->AuthorInfoModel->testedUser($clear_username,$clear_password);
                  if($checked){
 
                     header("location: /authorinfo/");
@@ -46,7 +46,6 @@ class AuthorInfo extends Controller {
                         $csrf = random_int(10000,100000000);
                         $_SESSION["csrf"] = $csrf;
                         setcookie("csrf",$csrf);
-                        echo("sess cookie::" . $_SESSION["csrf"]);
                         $this->view("main/login",array("csrf" => $csrf));
                      }
                      else{
@@ -59,7 +58,7 @@ class AuthorInfo extends Controller {
                      session_unset();
                      session_destroy();
                      $_SESSION = Array();
-                     header("location:/authorinfo/");
+                     $this->view("main/logout");
 
                  }
                     }
