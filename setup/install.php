@@ -1,6 +1,6 @@
 <?php
 
-class Installdatabase{
+class Installer{
 
     private $config= [];
 
@@ -12,7 +12,6 @@ class Installdatabase{
     function install(){
         if(isset($this->config["database"])){
             try{
-                 echo("if");
                  $dsn = $this->config["database"] ["driver"] . ":" .
                  "host=" . $this->config["database"] ["dbhost"] .
                  ";dbname=" . $this->config["database"] ["dbname"];
@@ -26,7 +25,7 @@ class Installdatabase{
                  $sql = file_get_contents("setup/data/init.sql");
                  $this->db->exec($sql);
 
-                 echo "Database setup succes. \n";
+                 
                 }catch(PDOException $ex){
                     echo($ex->getMessage());
 
@@ -35,8 +34,8 @@ class Installdatabase{
                 
             }
         }
-              echo("Hello");
-              $installer = new Installdatabase();
-              $installer->configuration();
+              
+              $installer = new Installer();
+              $installer->configure();
               $installer->install();
 ?>

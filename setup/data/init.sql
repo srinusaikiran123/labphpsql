@@ -11,7 +11,7 @@ CREATE TABLE authors (
 
 );
 
-INSERT INTO authors (email,hash_password, first_name, last_name, biography) VALUES ("Srinusaikiran@gmail.com","     ","Saikiran","puli","engineer");
+INSERT INTO authors (email,hash_password, first_name, last_name, biography) VALUES ("Srinusaikiran@gmail.com","     ","Saikiran","puli","software programmer");
 
 
 CREATE TABLE posts (
@@ -26,6 +26,8 @@ CREATE TABLE posts (
 
 );
 
-INSERT INTO `posts` (slug, title, content, author) VALUES ("post-a", "post A", "<article><h2>Post A><section><p>This is a modern painting</p></section></article>","srinusaikiran@gmail.com");
-
-
+INSERT INTO `posts` (slug, title, content, author) VALUES ("post-a", "post A", "<article><h2>Post A<h2><section><p>This is Sample Article Page</p></section></article>","srinusaikiran@gmail.com");
+INSERT INTO `posts` (slug, title, content, author) VALUES ("post-b , "post B", "<article><h2>Post B<h2><section><p>This is Sample Article Page</p></section></article>","srinusaikiran@gmail.com");
+INSERT INTO `posts` (slug, title, content, author) VALUES ("post-c", "post C", "<article><h2>Post C<h2><section><p>This is Sample Article Page</p></section></article>","srinusaikiran@gmail.com");
+INSERT INTO `posts` (slug, title, content, author) VALUES ("post-d", "post D", "<article><h2>Post D<h2><section><p>This is Sample Article Page/p></section></article>", "srinusaikiran@gmail.com");
+INSERT INTO `posts` (slug, title, content, author) VALUES ("post-e", "post E", "<article><h2>Post E<h2><section><p>This is Sample Article Page</p></section></article>","srinusaikiran@gmail.com");
