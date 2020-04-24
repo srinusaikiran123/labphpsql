@@ -11,7 +11,7 @@ CREATE TABLE authors (
 
 );
 
-INSERT INTO authors (email,hash_password, first_name, last_name, biography) VALUES ("Srinusaikiran@gmail.com","     ","Saikiran","puli","software programmer");
+INSERT INTO authors (email,hash_password, first_name, last_name, biography) VALUES ("Srinusaikiran@gmail.com","$2y$10$WgH8kiXfGVcGk3J1/f4sKez7dSnCR.hJ8MRAq3fkAcl.dCl94vAOq","Saikiran","puli","software programmer");
 
 
 CREATE TABLE posts (
@@ -22,7 +22,7 @@ CREATE TABLE posts (
     post_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     INDEX (author),
     FOREIGN KEY (author)
-    REFERENCES users (email)
+    REFERENCES authors (email)
 
 );
 
