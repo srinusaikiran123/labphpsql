@@ -26,10 +26,10 @@ class Main extends Controller {
         
     }
 
-    function IndianFestivals () {
+    function DucatiBikes() {
         //print_r("Language");
         $this->view("template/header");
-        $this->view("template/Indianfestivals");
+        $this->view("template/DucatiBikes");
         $this->view("template/footer");
         
     }
