@@ -15,7 +15,7 @@ class  BlogModel extends Model
     }
     function getPostById($postId)
     {
-        $sql = "SELECT title, content, author, post_date FROM posts WHERE slug = ? ";
+        $sql = "SELECT slug, title, content, author, post_date FROM posts WHERE slug = ? ";
         $statement = $this ->db-> prepare($sql);
         $statement -> execute(Array($postId));
         return $statement -> fetch();

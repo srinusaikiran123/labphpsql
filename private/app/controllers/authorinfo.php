@@ -23,7 +23,7 @@ class AuthorInfo extends Controller {
                 $sess_cookie = $_SESSION["csrf"];
                 if($sess_cookie == $post_csrf && $sess_cookie == $cookie_csrf) {
 
-                    $this->model("AuthorsInfoModel");
+                    $this->model("AuthorInfoModel");
                     $clear_username = htmlentities($_POST["username"]);
                     $clear_password = htmlentities($_POST["password"]);
                     $tested = $this->AuthorInfoModel->testedUser($clear_username,$clear_password);

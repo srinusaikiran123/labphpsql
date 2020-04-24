@@ -29,12 +29,12 @@ function Read($postId)
 }
 function Create()
 {
-    $is_auth = isset($_SESSION["username"]);
-    if(!$is_auth)
-    {
-       header("location: /blog");
-       return;
-    }
+    // $is_auth = isset($_SESSION["username"]);
+    // if(!$is_auth)
+    // {
+    //    header("location: /blog");
+    //    return;
+    // }
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $title = $_POST["title"];
@@ -55,12 +55,12 @@ function Create()
 }
 function PostUpdate($postId)
 {
-    $is_auth = isset($_SESSION["username"]);
-    if(!$is_auth)
-    {
-        header("location:/blog");
-        return;
-    }
+    // $is_auth = isset($_SESSION["username"]);
+    // if(!$is_auth)
+    // {
+    //     header("location:/blog");
+    //     return;
+    // }
     if($_SERVER["REQUEST_METHOD"] == "POST" )
     {
         $slug = $_POST["slug"];

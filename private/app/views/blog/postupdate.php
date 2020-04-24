@@ -6,6 +6,6 @@
 <label for = "author" >Author</label>
 <input type = "email" id = "author" name = "author" value = "<?php echo $author ?>"/>
 <label for = "content">Content</label>
-<textarea name = "content" id = "content"><?php echo $content?> </text area>
+<textarea name = "content" id = "content"><?php echo $content?> </textarea>
 <input type = "submit" value = "submit">
 </form>
