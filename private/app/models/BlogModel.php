@@ -9,7 +9,7 @@ class  BlogModel extends Model
     function getAllPosts()
     {
         $sql = "SELECT slug, title, author, post_date FROM posts";
-        $statement = $this -> db -> prepare($sql);
+        $statement = $this ->db-> prepare($sql);
         $statement -> execute();
         return $statement -> fetchAll();
     }

@@ -10,7 +10,7 @@ class AuthorInfoModel extends Model {
 
         $clear_username = $username ;
         $clear_password = $password ;
-        $sql= "SELECT `hash_password`, `first_name`, `last_name` from authors where email = ?" ;
+        $sql= "SELECT `hash_password`, `first_name`, `last_name` from authors where `email`= ?" ;
         $statement = $this->db->prepare($sql) ;
         $count = $statement->execute(Array($clear_username));
         $row = $statement->fetch();
@@ -23,8 +23,8 @@ class AuthorInfoModel extends Model {
                 $_SESSION["last_name"] = $row[2];
                 $_SESSION["username"] = $clear_username;
 
-                $update_sql = "UPDATE `authors` set `last_login_date` = CURRENT_TIMESTAMP() where email = ?";
-                $update_statement = $this-> db -> prepare($update_sql);
+                $update_sql = "UPDATE `authors` set `last_login_date` = CURRENT_TIMESTAMP() where `email` = ?";
+                $update_statement = $this->db-> prepare($update_sql);
                 $update_statement -> execute(Array($clear_username));
                 return 1;
 
