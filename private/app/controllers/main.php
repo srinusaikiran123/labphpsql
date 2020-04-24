@@ -21,22 +21,22 @@ class Main extends Controller {
 
         $this->view("template/header");
         $this->view("main/other");
-        echo("<br><br><br>hello there");
+        echo("<br><br><br>hello hai");
         $this->view("template/footer");
         
     }
 
-    function Festivals () {
+    function IndianFestivals () {
         //print_r("Language");
         $this->view("template/header");
-        $this->view("template/festivals");
+        $this->view("template/Indianfestivals");
         $this->view("template/footer");
         
     }
-    function Religions () {
+    function TeslaCars() {
         //print_r("Language");
         $this->view("template/header");
-        $this->view("template/religions");
+        $this->view("template/Teslacars");
         $this->view("template/footer");
         
     }

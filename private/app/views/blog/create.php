@@ -1,4 +1,5 @@
 <h1>Create Post</h1>
+
 <form method = "post" action = "/blog/create" >
 <input type = "hidden" value = "" name = "csrf">
 <label for = "title">Title</label>

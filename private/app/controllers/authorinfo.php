@@ -8,8 +8,8 @@ class AuthorInfo extends Controller {
     function Index () {
         $this->view("template/header");
 
-        $is_checked = isset($_SESSION["username"]);
-        if($is_checked) {
+        $is_tested = isset($_SESSION["username"]);
+        if($is_tested) {
             $this->view("main/tested");
         }else {
             $this->view("main/not tested");
@@ -26,14 +26,14 @@ class AuthorInfo extends Controller {
                     $this->model("AuthorsInfoModel");
                     $clear_username = htmlentities($_POST["username"]);
                     $clear_password = htmlentities($_POST["password"]);
-                    $checked = $this->AuthorInfoModel->testedUser($clear_username,$clear_password);
-                 if($checked){
+                    $tested = $this->AuthorInfoModel->testedUser($clear_username,$clear_password);
+                 if($tested){
 
                     header("location: /authorinfo/");
                  }
                  else{
 
-                    echo("unchecked");
+                    echo("not tested");
                 }
                 }
                  else{
