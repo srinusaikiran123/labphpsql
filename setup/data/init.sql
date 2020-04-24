@@ -27,7 +27,7 @@ CREATE TABLE posts (
 );
 
 INSERT INTO `posts` (slug, title, content, author) VALUES ("post-a", "post A", "<article><h2>Post A<h2><section><p>This is Sample Article Page</p></section></article>","srinusaikiran@gmail.com");
-INSERT INTO `posts` (slug, title, content, author) VALUES ("post-b , "post B", "<article><h2>Post B<h2><section><p>This is Sample Article Page</p></section></article>","srinusaikiran@gmail.com");
+INSERT INTO `posts` (slug, title, content, author) VALUES ("post-b" , "post B", "<article><h2>Post B<h2><section><p>This is Sample Article Page</p></section></article>","srinusaikiran@gmail.com");
 INSERT INTO `posts` (slug, title, content, author) VALUES ("post-c", "post C", "<article><h2>Post C<h2><section><p>This is Sample Article Page</p></section></article>","srinusaikiran@gmail.com");
 INSERT INTO `posts` (slug, title, content, author) VALUES ("post-d", "post D", "<article><h2>Post D<h2><section><p>This is Sample Article Page/p></section></article>", "srinusaikiran@gmail.com");
 INSERT INTO `posts` (slug, title, content, author) VALUES ("post-e", "post E", "<article><h2>Post E<h2><section><p>This is Sample Article Page</p></section></article>","srinusaikiran@gmail.com");
